@@ -1,0 +1,20 @@
+
+# https://github.com/pre-commit/action
+
+name: "pre-commit"
+
+on:
+  push:
+    branches:
+      - main
+  pull_request: ~
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4.1.1
+      name: Checkout
+
+    - uses: pre-commit/action@v3.0.0
+      name: Run pre-commit checks
